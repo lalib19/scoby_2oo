@@ -7,7 +7,11 @@ class ItemForm extends Component {
 
   handleChange(event) {
     console.log("Wax On Wax Off");
-    this.setState({});
+
+    
+    // this.setState({
+      
+    // });
   }
 
   handleSubmit = (event) => {
@@ -33,12 +37,11 @@ class ItemForm extends Component {
     return (
       <div className="ItemForm-container">
         <form className="form" onChange={this.handleChange}>
-          <h2 className="title">Add Item</h2>
-
+          <h2 className="title"> Add Item </h2>
           <div className="form-group">
             <label className="label" htmlFor="name">
-              Name
-            </label>
+              Name{" "}
+            </label>{" "}
             <input
               id="name"
               className="input"
@@ -46,77 +49,67 @@ class ItemForm extends Component {
               placeholder="What are you giving away ?"
             />
           </div>
-
           <div className="form-group">
             <label className="label" htmlFor="category">
-              Category
+              Category{" "}
             </label>
-
             <select id="category" defaultValue="-1">
               <option value="-1" disabled>
-                Select a category
-              </option>
-              <option value="Plant">Plant</option>
-              <option value="Kombucha">Kombucha</option>
-              <option value="Vinegar">Vinegar</option>
-              <option value="Kefir">Kefir</option>
-            </select>
+                Select a category{" "}
+              </option>{" "}
+              <option value="Plant"> Plant </option>{" "}
+              <option value="Kombucha"> Kombucha </option>{" "}
+              <option value="Vinegar"> Vinegar </option>{" "}
+              <option value="Kefir"> Kefir </option>{" "}
+            </select>{" "}
           </div>
-
           <div className="form-group">
             <label className="label" htmlFor="quantity">
-              Quantity
-            </label>
+              Quantity{" "}
+            </label>{" "}
             <input className="input" id="quantity" type="number" />
           </div>
-
           <div className="form-group">
             <label className="label" htmlFor="location">
-              Address
-            </label>
-            <LocationAutoComplete onSelect={this.handlePlace} />
+              Address{" "}
+            </label>{" "}
+            <LocationAutoComplete onSelect={this.handlePlace} />{" "}
           </div>
-
           <div className="form-group">
             <label className="label" htmlFor="description">
-              Description
-            </label>
+              Description{" "}
+            </label>{" "}
             <textarea
               id="description"
               className="text-area"
               placeholder="Tell us something about this item"
-            ></textarea>
+            ></textarea>{" "}
           </div>
-
           <div className="form-group">
             <label className="custom-upload label" htmlFor="image">
-              Upload image
-            </label>
+              Upload image{" "}
+            </label>{" "}
             <input className="input" id="image" type="file" />
           </div>
-
-          <h2>Contact information</h2>
-
+          <h2> Contact information </h2>
           <div className="form-group">
             <label className="label" htmlFor="contact">
-              How do you want to be reached?
-            </label>
+              How do you want to be reached ?
+            </label>{" "}
             <div>
               <input type="radio" />
-              user email
-            </div>
+              user email{" "}
+            </div>{" "}
             <input type="radio" />
-            contact phone number
+            contact phone number{" "}
           </div>
-
           <p className="message">
             <img src="/media/info.svg" alt="info" />
-            Want to be contacted by phone? Add your phone number in your
-            personal page.
+            Want to be contacted by phone ? Add your phone number in your
+            personal page.{" "}
           </p>
-
-          <button className="btn-submit">Add Item</button>
-        </form>
+          <button className="btn-submit"> Add Item </button>{" "}
+        </form>{" "}
       </div>
     );
   }
