@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, {
+  Component
+} from "react";
 import "../styles/LocationAutoComplete.css";
 import axios from "axios";
 
@@ -12,12 +14,15 @@ class LocationAutoComplete extends Component {
     };
     this.handleSearchChange = this.handleSearchChange.bind(this);
 
-    // if (!process.env.REACT_APP_MAPBOX_TOKEN) {
-    //   throw new Error(
-    //     "You don't have any 'process.env.REACT_APP_MAPBOX_API_KEY'"
-    //   );
-    // }
-  }
+
+  };
+
+  // handlePlace() {
+  //   if (!process.env.REACT_APP_MAPBOX_TOKEN) {
+  //     throw new Error(
+  //       "You don't have any 'process.env.REACT_APP_MAPBOX_API_KEY'"
+  //     )};
+  //   };
 
   handleSearchChange(e) {
     this.setState({
@@ -65,30 +70,41 @@ class LocationAutoComplete extends Component {
   }
 
   render() {
-    return (
-      <div className="LocationAutoComplete">
-        <input
-          className="input"
-          type="text"
-          value={this.state.search}
-          onChange={this.handleSearchChange}
-          placeholder="Enter an address"
-        />
-        <ul className="LocationAutoComplete-results">
-          {this.state.results.map((place) => (
-            <li
-              key={place.id}
-              className="LocationAutoComplete-items"
-              onClick={() => this.handleItemClicked(place)}
-            >
-              {place.place_name}
-            </li>
-          ))}
-          {this.state.isLoading && (
-            <li className="LocationAutoComplete-items">Loading...</li>
-          )}
-        </ul>
-      </div>
+    return ( <
+      div className = "LocationAutoComplete" >
+      <
+      input className = "input"
+      type = "text"
+      value = {
+        this.state.search
+      }
+      onChange = {
+        this.handleSearchChange
+      }
+      placeholder = "Enter an address" /
+      >
+      <
+      ul className = "LocationAutoComplete-results" > {
+        this.state.results.map((place) => ( <
+          li key = {
+            place.id
+          }
+          className = "LocationAutoComplete-items"
+          onClick = {
+            () => this.handleItemClicked(place)
+          } >
+          {
+            place.place_name
+          } <
+          /li>
+        ))
+      } {
+        this.state.isLoading && ( <
+          li className = "LocationAutoComplete-items" > Loading... < /li>
+        )
+      } <
+      /ul> <
+      /div>
     );
   }
 }
