@@ -3,7 +3,15 @@ import LocationAutoComplete from "../LocationAutoComplete";
 import "../../styles/form.css";
 
 class ItemForm extends Component {
-  state = {};
+  state = {
+    name:"",
+    category:"",
+    quantity:"",
+    address:"",
+    descritption:"",
+    id_user:"",
+
+  };
 
   handleChange(event) {
     console.log("Wax On Wax Off");
